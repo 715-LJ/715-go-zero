@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"Ningxi-Compose/user/api/internal/config"
-	"Ningxi-Compose/user/api/internal/handler"
-	"Ningxi-Compose/user/api/internal/svc"
+	"qiyaowu-go-zero/user/api/internal/config"
+	"qiyaowu-go-zero/user/api/internal/handler"
+	"qiyaowu-go-zero/user/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

@@ -1,56 +1,24 @@
-info(
-	title: // UserApi
-	desc: // 用户服务相关API
+syntax = "v1"
+
+info (
+	title: // TODO: add title
+	desc: // TODO: add description
+	author: "lijia04"
+	email: "lijia04@qianxin.com"
 )
 
-type LoginRequest {
-	Email    string `json:"email"`
-	Password string `json:"password"`
+type request {
+	// TODO: add members here and delete this comment
 }
 
-type LoginResponse {
-	UserReply
-}
-
-type RegisterRequest {
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-}
-
-type RegisterResponse {
-	UserReply
-}
-
-type UserinfoRequest {
-	Userid string `json:"userid"`
-	Token  string `json:"token"`
-}
-
-type UserinfoResponse {
-	UserReply
-}
-
-type UserReply {
-	Id       int64  `json:"id"`
-	Username string `json:"username"`
-	Email    string `json:"email"`
-	JwtToken
-}
-
-type JwtToken {
-	AccessToken  string `json:"accessToken,omitempty"`
-	AccessExpire int64  `json:"accessExpire,omitempty"`
-	RefreshAfter int64  `json:"refreshAfter,omitempty"`
+type response {
+	// TODO: add members here and delete this comment
 }
 
 service user-api {
-	@handler Login    // 用户登录
-	post /users/login(LoginRequest) returns(LoginResponse)
+	@handler GetUser // TODO: set handler name and delete this comment
+	get /users/id/:userId(request) returns(response)
 	
-	@handler Register // 用户注册
-	post /users/register(RegisterRequest) returns(RegisterResponse)
-	
-	@handler UserInfo // 用户信息
-	post /users/userinfo(UserinfoRequest) returns(UserinfoResponse)
+	@handler CreateUser // TODO: set handler name and delete this comment
+	post /users/create(request)
 }

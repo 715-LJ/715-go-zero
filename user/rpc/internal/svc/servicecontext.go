@@ -1,6 +1,6 @@
 package svc
 
-import "Ningxi-Compose/user/rpc/internal/config"
+import "qiyaowu-go-zero/user/rpc/internal/config"
 
 type ServiceContext struct {
 	Config config.Config

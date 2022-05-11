@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"Ningxi-Compose/user/rpc/internal/config"
-	"Ningxi-Compose/user/rpc/internal/server"
-	"Ningxi-Compose/user/rpc/internal/svc"
-	"Ningxi-Compose/user/rpc/types/user"
+	"qiyaowu-go-zero/user/rpc/internal/config"
+	"qiyaowu-go-zero/user/rpc/internal/server"
+	"qiyaowu-go-zero/user/rpc/internal/svc"
+	"qiyaowu-go-zero/user/rpc/types/user"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"

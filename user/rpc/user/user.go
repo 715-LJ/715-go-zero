@@ -6,22 +6,18 @@ package user
 import (
 	"context"
 
-	"Ningxi-Compose/user/rpc/types/user"
+	"qiyaowu-go-zero/user/rpc/types/user"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
 )
 
 type (
-	LoginRequest    = user.LoginRequest
-	RegisterRequest = user.RegisterRequest
-	Response        = user.Response
-	UserinfoRequest = user.UserinfoRequest
+	Request  = user.Request
+	Response = user.Response
 
 	User interface {
-		Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*Response, error)
-		Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*Response, error)
-		Userinfo(ctx context.Context, in *UserinfoRequest, opts ...grpc.CallOption) (*Response, error)
+		Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	}
 
 	defaultUser struct {
@@ -35,17 +31,7 @@ func NewUser(cli zrpc.Client) User {
 	}
 }
 
-func (m *defaultUser) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*Response, error) {
+func (m *defaultUser) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	client := user.NewUserClient(m.cli.Conn())
-	return client.Login(ctx, in, opts...)
-}
-
-func (m *defaultUser) Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*Response, error) {
-	client := user.NewUserClient(m.cli.Conn())
-	return client.Register(ctx, in, opts...)
-}
-
-func (m *defaultUser) Userinfo(ctx context.Context, in *UserinfoRequest, opts ...grpc.CallOption) (*Response, error) {
-	client := user.NewUserClient(m.cli.Conn())
-	return client.Userinfo(ctx, in, opts...)
+	return client.Ping(ctx, in, opts...)
 }

@@ -3,27 +3,27 @@ package logic
 import (
 	"context"
 
-	"Ningxi-Compose/user/rpc/internal/svc"
-	"Ningxi-Compose/user/rpc/types/user"
+	"qiyaowu-go-zero/user/rpc/internal/svc"
+	"qiyaowu-go-zero/user/rpc/types/user"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type RegisterLogic struct {
+type PingLogic struct {
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 	logx.Logger
 }
 
-func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RegisterLogic {
-	return &RegisterLogic{
+func NewPingLogic(ctx context.Context, svcCtx *svc.ServiceContext) *PingLogic {
+	return &PingLogic{
 		ctx:    ctx,
 		svcCtx: svcCtx,
 		Logger: logx.WithContext(ctx),
 	}
 }
 
-func (l *RegisterLogic) Register(in *user.RegisterRequest) (*user.Response, error) {
+func (l *PingLogic) Ping(in *user.Request) (*user.Response, error) {
 	// todo: add your logic here and delete this line
 
 	return &user.Response{}, nil
