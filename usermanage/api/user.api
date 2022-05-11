@@ -1,0 +1,56 @@
+info(
+	title: // UserApi
+	desc: // 用户服务相关API
+)
+
+type LoginRequest {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+type LoginResponse {
+	UserReply
+}
+
+type RegisterRequest {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+type RegisterResponse {
+	UserReply
+}
+
+type UserinfoRequest {
+	Userid string `json:"userid"`
+	Token  string `json:"token"`
+}
+
+type UserinfoResponse {
+	UserReply
+}
+
+type UserReply {
+	Id       int64  `json:"id"`
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	JwtToken
+}
+
+type JwtToken {
+	AccessToken  string `json:"accessToken,omitempty"`
+	AccessExpire int64  `json:"accessExpire,omitempty"`
+	RefreshAfter int64  `json:"refreshAfter,omitempty"`
+}
+
+service user-api {
+	@handler Login    // 用户登录
+	post /users/login(LoginRequest) returns(LoginResponse)
+	
+	@handler Register // 用户注册
+	post /users/register(RegisterRequest) returns(RegisterResponse)
+	
+	@handler UserInfo // 用户信息
+	post /users/userinfo(UserinfoRequest) returns(UserinfoResponse)
+}

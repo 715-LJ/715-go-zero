@@ -1,0 +1,43 @@
+2022-05-11T02:08:32.215860Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2022-05-11T02:08:32.218175Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2022-05-11T02:08:32.219001Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.27) initializing of server in progress as process 103
+2022-05-11T02:08:32.248055Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2022-05-11T02:08:32.352892Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2022-05-11T02:08:32.393574Z 1 [ERROR] [MY-012585] [InnoDB] Linux Native AIO interface is not supported on this platform. Please check your OS documentation and install appropriate binary of InnoDB.
+2022-05-11T02:08:32.394878Z 1 [Warning] [MY-012654] [InnoDB] Linux Native AIO disabled.
+2022-05-11T02:08:37.884522Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2022-05-11T02:08:43.408933Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2022-05-11T02:08:43.410169Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2022-05-11T02:08:43.549314Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2022-05-11T02:08:53.875536Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2022-05-11T02:08:53.877869Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2022-05-11T02:08:53.878114Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.27) starting as process 158
+2022-05-11T02:08:53.908521Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2022-05-11T02:08:54.043553Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2022-05-11T02:08:54.246201Z 1 [ERROR] [MY-012585] [InnoDB] Linux Native AIO interface is not supported on this platform. Please check your OS documentation and install appropriate binary of InnoDB.
+2022-05-11T02:08:54.247585Z 1 [Warning] [MY-012654] [InnoDB] Linux Native AIO disabled.
+2022-05-11T02:08:55.666013Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2022-05-11T02:08:57.598720Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2022-05-11T02:08:57.599999Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2022-05-11T02:08:57.666302Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2022-05-11T02:08:57.668316Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2022-05-11T02:08:57.702265Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2022-05-11T02:08:57.965951Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2022-05-11T02:08:57.966694Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.27'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2022-05-11T02:09:11.345095Z 10 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.27).
+2022-05-11T02:09:12.482953Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.27)  MySQL Community Server - GPL.
+2022-05-11T02:09:13.891458Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
+2022-05-11T02:09:13.893730Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2022-05-11T02:09:13.893991Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.27) starting as process 1
+2022-05-11T02:09:13.926614Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2022-05-11T02:09:14.036341Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2022-05-11T02:09:14.218252Z 1 [ERROR] [MY-012585] [InnoDB] Linux Native AIO interface is not supported on this platform. Please check your OS documentation and install appropriate binary of InnoDB.
+2022-05-11T02:09:14.219738Z 1 [Warning] [MY-012654] [InnoDB] Linux Native AIO disabled.
+2022-05-11T02:09:15.572741Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2022-05-11T02:09:16.934945Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1 is enabled for channel mysql_main
+2022-05-11T02:09:16.935944Z 0 [Warning] [MY-013746] [Server] A deprecated TLS version TLSv1.1 is enabled for channel mysql_main
+2022-05-11T02:09:16.978541Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2022-05-11T02:09:16.980223Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2022-05-11T02:09:16.998340Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2022-05-11T02:09:17.230268Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2022-05-11T02:09:17.232902Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.27'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.

@@ -1,0 +1,72 @@
+version: '3.7'
+
+networks:
+  ningxi_network_bridge:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.16.0.0/16
+        gateway: 172.16.0.1
+
+services:
+  nginx:
+    container_name: ${CONTAINER_BASE_NAME}_nginx
+    image: "nginx:${NGINX_VERSION}"
+    ports:
+      - "80:80"
+      - "8088:8080"
+      - "443:443"
+      - "33335:80"
+    volumes:
+      - ${DATA_DIR}/www:/var/www/html:rw
+      - ${CONFIG_DIR}/nginx/conf.d/:/etc/nginx/conf.d/:rw
+      - ${LOG_DIR}/nginx/:/var/log/nginx/:rw
+    environment:
+      TZ: "${TZ}"
+    restart: always
+    networks:
+      ningxi_network_bridge:
+        ipv4_address: 172.16.0.2
+
+  mysql:
+    container_name: "${CONTAINER_BASE_NAME}_mysql"
+    image: "mysql:${MYSQL_VERSION}"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      TZ: "${TZ}"
+    ports:
+      - "${MYSQL_HOST_PORT}:3306"
+    volumes:      
+      - ${CONFIG_DIR}/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
+      - ${DATA_DIR}/mysql:/var/lib/mysql/:rw
+    networks:
+      ningxi_network_bridge:
+        ipv4_address: 172.16.0.3
+
+  redis:
+    image: "redis:${REDIS_VERSION}"
+    container_name: "${CONTAINER_BASE_NAME}_redis"
+    ports:
+      - "${REDIS_HOST_PORT}:6379"
+    volumes:
+      - ${CONFIG_DIR}/redis/redis.conf:/etc/redis.conf:ro
+      - ${DATA_DIR}/redis:/data/:rw
+    restart: always
+    entrypoint: ["redis-server", "/etc/redis.conf"]
+    environment:
+      TZ: "${TZ}"
+    networks:
+      ningxi_network_bridge:
+        ipv4_address: 172.16.0.4
+
+  etcd:
+    image: 'bitnami/etcd:${ETCD_VERSION}'
+    container_name: "${CONTAINER_BASE_NAME}_etcd"
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://127.0.0.1:2379
+    ports:
+      - 2379:2379
+      - 2380:2380
