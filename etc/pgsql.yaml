@@ -1,0 +1,8 @@
+Hosts: 10.47.119.170
+Port: 5432
+User: sase
+Enable: true
+Password: admin123456
+Dbname: sase
+MaxidleConnection: 10
+MaxopenConnection: 10

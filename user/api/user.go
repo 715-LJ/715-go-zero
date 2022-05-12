@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"qiyaowu-go-zero/basic"
 
 	"qiyaowu-go-zero/user/api/internal/config"
 	"qiyaowu-go-zero/user/api/internal/handler"
@@ -19,6 +20,8 @@ func main() {
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+
+	basic.Init()
 
 	ctx := svc.NewServiceContext(c)
 	server := rest.MustNewServer(c.RestConf)
