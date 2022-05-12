@@ -1,7 +1,7 @@
 version: '3.7'
 
 networks:
-  ningxi_network_bridge:
+  qiyaowu_network_bridge:
     driver: bridge
     ipam:
       config:
@@ -25,7 +25,7 @@ services:
       TZ: "${TZ}"
     restart: always
     networks:
-      ningxi_network_bridge:
+      qiyaowu_network_bridge:
         ipv4_address: 172.16.0.2
 
   mysql:
@@ -42,7 +42,7 @@ services:
       - ${CONFIG_DIR}/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
       - ${DATA_DIR}/mysql:/var/lib/mysql/:rw
     networks:
-      ningxi_network_bridge:
+      qiyaowu_network_bridge:
         ipv4_address: 172.16.0.3
 
   redis:
@@ -58,7 +58,7 @@ services:
     environment:
       TZ: "${TZ}"
     networks:
-      ningxi_network_bridge:
+      qiyaowu_network_bridge:
         ipv4_address: 172.16.0.4
 
   etcd:
