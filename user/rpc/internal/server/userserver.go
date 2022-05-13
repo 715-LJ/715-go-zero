@@ -22,7 +22,17 @@ func NewUserServer(svcCtx *svc.ServiceContext) *UserServer {
 	}
 }
 
-func (s *UserServer) Ping(ctx context.Context, in *user.Request) (*user.Response, error) {
-	l := logic.NewPingLogic(ctx, s.svcCtx)
-	return l.Ping(in)
+func (s *UserServer) Login(ctx context.Context, in *user.LoginRequest) (*user.Response, error) {
+	l := logic.NewLoginLogic(ctx, s.svcCtx)
+	return l.Login(in)
+}
+
+func (s *UserServer) Register(ctx context.Context, in *user.RegisterRequest) (*user.Response, error) {
+	l := logic.NewRegisterLogic(ctx, s.svcCtx)
+	return l.Register(in)
+}
+
+func (s *UserServer) Userinfo(ctx context.Context, in *user.UserinfoRequest) (*user.Response, error) {
+	l := logic.NewUserinfoLogic(ctx, s.svcCtx)
+	return l.Userinfo(in)
 }

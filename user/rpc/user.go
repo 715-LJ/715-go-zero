@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-
+	"qiyaowu-go-zero/basic"
 	"qiyaowu-go-zero/user/rpc/internal/config"
 	"qiyaowu-go-zero/user/rpc/internal/server"
 	"qiyaowu-go-zero/user/rpc/internal/svc"
@@ -23,6 +23,8 @@ func main() {
 
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
+
+	basic.Init()
 	ctx := svc.NewServiceContext(c)
 	svr := server.NewUserServer(ctx)
 

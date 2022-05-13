@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package user;
-option go_package="./user";
+option go_package = "./user";
 
 message LoginRequest {
   string email = 1;
@@ -15,16 +15,13 @@ message RegisterRequest {
 }
 
 message UserinfoRequest {
-  string Userid = 1;
-  string Token = 2;
+  int64 Userid = 1;
 }
 
 message Response {
-  int64 id = 1;
-  string email = 2;
-  string accessToken = 3;
-  int64 accessExpire = 4;
-  int64 refreshAfter = 5;
+  int32 code = 1;
+  string message = 2;
+  string data = 3;
 }
 
 service User {

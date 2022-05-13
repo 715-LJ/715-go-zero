@@ -7,9 +7,7 @@
  **/
 package errorx
 
-import (
-	message2 "qsase/common/message"
-)
+import message2 "qiyaowu-go-zero/common/message"
 
 var Language string
 

@@ -21,18 +21,18 @@ type RegisterResponse struct {
 }
 
 type UserinfoRequest struct {
-	Userid string `json:"userid"`
+	Userid int64 `json:"userid"`
 }
 
 type UserinfoResponse struct {
 	Id       int64  `json:"id"`
-	UserName string `json:"username"`
+	Username string `json:"username"`
 	Email    string `json:"email"`
 }
 
 type UserReply struct {
 	Id       int64  `json:"id"`
-	UserName string `json:"username"`
+	Username string `json:"username"`
 	Email    string `json:"email"`
 }
 

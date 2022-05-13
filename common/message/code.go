@@ -8,8 +8,8 @@
 package message
 
 import (
-	en_US "qsase/common/message/en-US"
-	zh_CN "qsase/common/message/zh-CN"
+	en_US "qiyaowu-go-zero/common/message/en-US"
+	zh_CN "qiyaowu-go-zero/common/message/zh-CN"
 )
 
 const OK = 0

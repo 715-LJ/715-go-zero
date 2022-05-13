@@ -1,19 +1,19 @@
 package svc
 
 import (
+	"github.com/zeromicro/go-zero/zrpc"
 	"qiyaowu-go-zero/user/api/internal/config"
-	models "qiyaowu-go-zero/user/model"
+	"qiyaowu-go-zero/user/rpc/user"
 )
 
 type ServiceContext struct {
-	Config    config.Config
-	UserModel *models.UserModel
-	//UserRpc   user.User
+	Config  config.Config
+	UserRpc user.User
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 	return &ServiceContext{
-		Config: c,
-		//UserModel: models.NewUserModel(),
+		Config:  c,
+		UserRpc: user.NewUser(zrpc.MustNewClient(c.UserRpc)),
 	}
 }

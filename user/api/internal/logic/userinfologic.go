@@ -2,12 +2,11 @@ package logic
 
 import (
 	"context"
+	"github.com/pquerna/ffjson/ffjson"
 	"github.com/zeromicro/go-zero/core/logx"
-	"qiyaowu-go-zero/user"
 	"qiyaowu-go-zero/user/api/internal/svc"
 	"qiyaowu-go-zero/user/api/internal/types"
-	models "qiyaowu-go-zero/user/model"
-	"strconv"
+	"qiyaowu-go-zero/user/rpc/types/user"
 )
 
 type UserInfoLogic struct {
@@ -25,24 +24,19 @@ func NewUserInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserInfo
 }
 
 func (l *UserInfoLogic) UserInfo(req *types.UserinfoRequest) (resp *types.UserinfoResponse, err error) {
-	userInt, err := strconv.ParseInt(req.Userid, 10, 64)
+	userInfo, err := l.svcCtx.UserRpc.Userinfo(l.ctx, &user.UserinfoRequest{
+		Userid: req.Userid,
+	})
 	if err != nil {
+		logx.Errorf("数据不存在：", err)
 		return nil, err
 	}
 
-	userModel := models.NewUserModel()
-	userInfo := userModel.GetItem(userInt)
-	switch err {
-	case nil:
-		return &types.UserinfoResponse{
-			Id:       userInfo.Id,
-			UserName: userInfo.UserName,
-			Email:    userInfo.Email,
-		}, nil
-	case user.ErrNotFound:
-		return nil, err
-	default:
-		return nil, err
-	}
-	return
+	info := make(map[string]interface{}, 0)
+	ffjson.Unmarshal([]byte(userInfo.Data), &info)
+	return &types.UserinfoResponse{
+		Id:       int64(info["id"].(float64)),
+		Username: info["username"].(string),
+		Email:    info["email"].(string),
+	}, nil
 }
